@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+
+     <section class="sectionA">
+        <h1>Recharge Card</h1>
+     </section>
+    <section class="sectionB">
+        <section class="sectionC">
+   <div class="firstPage">
+    <div action="" id="page">
+        <div>
+            <h2>Select Network</h2>
+    <select id="network" onchange="handleValue()">
+        <option value="select Network">Select Network</option>
+        <option value="GLO">GLO</option>
+        <option value="MTN">MTN</option>
+        <option value="AIRTEL">AIRTEL</option>
+        <option value="9 MOBILE">9 MOBILE</option>
+       </select>
+        </div>
+     <div>
+        <h2>select Amount</h2>
+            <select id="amount" onchange="handleValue()" >
+                <option value="select Amount"> select Amount</option>
+        <option value="100">100</option>
+        <option value="200">200</option>
+        <option value="500">500</option>
+        <option value="1000">1000</option>
+       </select>
+     </div>
+     <div>
+        <h2>Generate Pin</h2>
+        <input type="text" id="inputrandom" placeholder="Generate pin" disabled style="width: 95%; padding: 10px; border-radius: 5px;">
+     </div>
+     <div>
+        <button class="generatePin" onclick="handlePin()"> Generate Pin</button>
+     </div>
+    </div>
+     </div>
+     <div class="secondPage">
+        <div>
+         <h2>Insert Pin below</h2>
+         <input type="text" placeholder="pin" id="pastePin"> 
+         <button onclick="rechargeCard()">Recharge Card </button>
+        </div>
+     </div>
+    </section>
+    <div id="modal"> 
+      <h3 id="error1"></h3>
+      <button onclick="popup()">ok</button>
+</div>
+<div id="copyfont" onclick="copyPin()">
+    <i class="fa-solid fa-copy"></i>
+</div>
+<div id="pastefont" onclick="pastePin1()">
+    <i class="fa-solid fa-paste"></i>
+</div>
+</section>
+
+<section>
+    <div class="section5">
+        <table>
+                <tr>
+                    <th>S/N</th>
+                    <th>Network</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Time</th>
+                    <th>PrintRef</th>
+                    <th>Status</th>
+                    <th>Delete</th>
+                </tr>
+                <tbody id="display">
+                   
+                </tbody>
+        </table>
+    </div>
+</section>
+
+</body>
+
+<script src="./index.js"></script>
+</html>
