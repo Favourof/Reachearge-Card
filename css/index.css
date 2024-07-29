@@ -109,16 +109,16 @@
 }
 .sectionB #copyfont {
   position: absolute;
-  top: 273px;
-  left: 42%;
+  top: 62%;
+  left: 41%;
 }
 .sectionB #copyfont:hover {
   color: red;
 }
 .sectionB #pastefont {
   position: absolute;
-  top: 101px;
-  left: 88.5%;
+  top: 28%;
+  left: 87.5%;
 }
 .sectionB #pastefont:hover {
   color: red;
@@ -134,10 +134,52 @@ div table th {
   padding: 9px;
 }
 
+@media(max-width: 565px){
+  .sectionB #copyfont {
+    position: absolute;
+    top: 62%;
+    left: 34%;
+  }
+  .sectionB #copyfont:hover {
+    color: red;
+  }
+  .sectionB #pastefont {
+    position: absolute;
+    top: 28%;
+    left: 80.5%;
+  } 
+}
+
+@media(max-width: 800px){
+  .sectionB #copyfont {
+    position: absolute;
+    top: 62%;
+    left: 38%;
+  }
+  .sectionB #copyfont:hover {
+    color: red;
+  }
+  .sectionB #pastefont {
+    position: absolute;
+    top: 28%;
+    left: 84.5%;
+  } 
+}
+
 @media (max-width: 630px) {
+  .sectionA{
+    width: 100%;
+    font-size: 20px;
+  }
+  .sectionA h1 {
+    padding-top: 7px;
+    color: white;
+    font-size: 20px;
+  }
   .sectionB {
     width: 100%;
     position: relative;
+    
   }
   .sectionB .sectionC {
     width: 93%;
@@ -227,18 +269,23 @@ div table th {
   }
   .sectionB #copyfont {
     position: absolute;
-    top: 273px;
-    left: 42%;
+    top: 45%;
+    left: 76.5%;
   }
   .sectionB #copyfont:hover {
     color: red;
   }
   .sectionB #pastefont {
     position: absolute;
-    top: 101px;
-    left: 88.5%;
+    top: 78%;
+    left: 76.5%;
   }
   .sectionB #pastefont:hover {
     color: red;
+  }
+  .section5{
+    margin-top: 350px;
+    width: 100%;
+    overflow-y: scroll;
   }
 }

@@ -64,6 +64,7 @@
   .secondPage {
     width: 90%;
     // height: 50vh;
+    // display: none;
     padding-bottom: 180px;
     margin: auto;
     // border: thin solid black;
@@ -117,9 +118,9 @@
     }
   }
   #copyfont {
-    // width: 50px;
-    // height: 50px;
-    // border: thin solid black;
+    width: 50px;
+    height: 50px;
+    border: thin solid black;
     position: absolute;
     top: 273px;
     left: 42%;
@@ -161,6 +162,7 @@ div {
       display: grid;
       grid-template-rows: 1fr 1fr;
       grid-template-columns: 1fr;
+      display: none;
     }
     .firstPage {
       width: 90%;
@@ -269,4 +271,6 @@ div {
       color: red;
     }
   }
+ 
+
 }

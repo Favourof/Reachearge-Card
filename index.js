@@ -1,9 +1,9 @@
-myArray = [];
+Allarraey = [];
 let copiedPin;
 let used = false;
-let data = JSON.parse(localStorage.getItem("salesLists"));
-if (data) {
-  myArray = data;
+let data1 = JSON.parse(localStorage.getItem("salesLists"));
+if (data1) {
+  Allarraey = data1;
 }
 
 let code;
@@ -21,7 +21,7 @@ function handleValue() {
 }
 function show() {
   display.innerHTML = "";
-  myArray.forEach((ele, i) => {
+  Allarraey?.forEach((ele, i) => {
     display.innerHTML += `
         <tr>
             <td>${i + 1}</td>
@@ -65,18 +65,18 @@ function handlePin() {
       time1: time,
     };
 
-    myArray.push(obj);
+    Allarraey.push(obj);
 
-    localStorage.setItem("salesLists", JSON.stringify(myArray));
+    localStorage.setItem("salesLists", JSON.stringify(Allarraey));
 
     show();
-    console.log(myArray);
+    console.log(Allarraey);
   }
 }
 function deleteDetails(index) {
-  myArray.splice(index, 1);
+  Allarraey.splice(index, 1);
   show();
-  localStorage.setItem("salesLists", JSON.stringify(myArray));
+  localStorage.setItem("salesLists", JSON.stringify(Allarraey));
 }
 function copyPin() {
   if (inputrandom.value == "") {
@@ -104,7 +104,7 @@ function pastePin1() {
 function rechargeCard() {
   // alert(pastePin.value)
 
-  data.forEach((elem, i) => {
+  data1?.forEach((elem, i) => {
     if (pastePin.value.trim() == elem.pin && elem.status1 == false) {
       elem.status1 = true;
       error1.innerHTML = "Recharge successful";
@@ -116,7 +116,7 @@ function rechargeCard() {
       error1.innerHTML = "Aready been used by you";
       modal.style.display = "block";
     }
-    localStorage.setItem("salesLists", JSON.stringify(myArray));
+    localStorage.setItem("salesLists", JSON.stringify(Allarraey));
   });
   //   pastePin.value=''
 
