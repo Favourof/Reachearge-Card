@@ -1,9 +1,12 @@
-myArray = [];
+Allarraey = [];
 let copiedPin;
 let used = false;
-let data = JSON.parse(localStorage.getItem("salesLists"));
-if (data) {
-  myArray = data;
+let diable = 1
+let timeMonitor = 1
+let showTime
+let data1 = JSON.parse(localStorage.getItem("salesLists"));
+if (data1) {
+  Allarraey = data1;
 }
 
 let code;
@@ -21,7 +24,7 @@ function handleValue() {
 }
 function show() {
   display.innerHTML = "";
-  myArray.forEach((ele, i) => {
+  Allarraey?.forEach((ele, i) => {
     display.innerHTML += `
         <tr>
             <td>${i + 1}</td>
@@ -65,18 +68,18 @@ function handlePin() {
       time1: time,
     };
 
-    myArray.push(obj);
+    Allarraey.push(obj);
 
-    localStorage.setItem("salesLists", JSON.stringify(myArray));
+    localStorage.setItem("salesLists", JSON.stringify(Allarraey));
 
     show();
-    console.log(myArray);
+    console.log(Allarraey);
   }
 }
 function deleteDetails(index) {
-  myArray.splice(index, 1);
+  Allarraey.splice(index, 1);
   show();
-  localStorage.setItem("salesLists", JSON.stringify(myArray));
+  localStorage.setItem("salesLists", JSON.stringify(Allarraey));
 }
 function copyPin() {
   if (inputrandom.value == "") {
@@ -102,9 +105,12 @@ function pastePin1() {
   }
 }
 function rechargeCard() {
-  // alert(pastePin.value)
-
-  data.forEach((elem, i) => {
+  // alert('hello')
+  diable++
+  // console.log(diable);
+ 
+     
+  data1?.forEach((elem, i) => {
     if (pastePin.value.trim() == elem.pin && elem.status1 == false) {
       elem.status1 = true;
       error1.innerHTML = "Recharge successful";
@@ -112,11 +118,23 @@ function rechargeCard() {
     } else if (pastePin.value != elem.pin) {
       error1.innerHTML = "invalid pin";
       modal.style.display = "block";
+      if (diable === 6 || diable >= 6 ) {
+        console.log("it time br");
+           
+          showTime = setInterval(() => {
+          disable.innerHTML = timeMonitor
+         }, 1000);
+      
+        disable.disabled = true
+      
+        Blockerinpin()
+        return  error1.innerHTML = "Too many try, try again in 30min";
+      }
     } else {
       error1.innerHTML = "Aready been used by you";
       modal.style.display = "block";
     }
-    localStorage.setItem("salesLists", JSON.stringify(myArray));
+    localStorage.setItem("salesLists", JSON.stringify(Allarraey));
   });
   //   pastePin.value=''
 
@@ -125,3 +143,22 @@ function rechargeCard() {
 function popup() {
   modal.style.display = "none";
 }
+
+ function Blockerinpin() {
+  const counter = setInterval(() => {
+    timeMonitor++
+    console.log(timeMonitor);
+    if (timeMonitor == 20 ) {
+     clearInterval(counter)
+     clearInterval(showTime)
+     console.log(timeMonitor, "hello here is me ");
+     disable.disabled = false
+     disable.innerHTML ="Recharge Card"
+     diable = 1
+     timeMonitor = 1
+    }
+}, 1000);
+
+
+
+ }

@@ -135,9 +135,19 @@ div table th {
 }
 
 @media (max-width: 630px) {
+  .sectionA{
+    width: 100%;
+    font-size: 20px;
+  }
+  .sectionA h1 {
+    padding-top: 7px;
+    color: white;
+    font-size: 20px;
+  }
   .sectionB {
     width: 100%;
     position: relative;
+    
   }
   .sectionB .sectionC {
     width: 93%;
@@ -240,5 +250,10 @@ div table th {
   }
   .sectionB #pastefont:hover {
     color: red;
+  }
+  .section5{
+    margin-top: 350px;
+    width: 100%;
+    overflow-y: scroll;
   }
 }
