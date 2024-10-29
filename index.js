@@ -1,9 +1,12 @@
 Allarraey = [];
 let copiedPin;
 let used = false;
+<<<<<<< HEAD
 let diable = 1
 let timeMonitor = 1
 let showTime
+=======
+>>>>>>> 984cfa076140c722b47eba4c711f812a15e456ab
 let data1 = JSON.parse(localStorage.getItem("salesLists"));
 if (data1) {
   Allarraey = data1;
@@ -105,11 +108,16 @@ function pastePin1() {
   }
 }
 function rechargeCard() {
+<<<<<<< HEAD
   // alert('hello')
   diable++
   // console.log(diable);
  
      
+=======
+  // alert(pastePin.value)
+
+>>>>>>> 984cfa076140c722b47eba4c711f812a15e456ab
   data1?.forEach((elem, i) => {
     if (pastePin.value.trim() == elem.pin && elem.status1 == false) {
       elem.status1 = true;
