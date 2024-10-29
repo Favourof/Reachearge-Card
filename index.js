@@ -153,9 +153,10 @@ function popup() {
      clearInterval(showTime)
      console.log(timeMonitor, "hello here is me ");
      disable.disabled = false
-     disable.innerHTML ="Recharge Card"
+    
      diable = 1
      timeMonitor = 1
+      disable.innerHTML ="Recharge Card"
     }
 }, 1000);
 
