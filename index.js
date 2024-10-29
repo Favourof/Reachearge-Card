@@ -148,12 +148,11 @@ function popup() {
   const counter = setInterval(() => {
     timeMonitor++
     console.log(timeMonitor);
-    if (timeMonitor == 20 ) {
+    if (timeMonitor == 20 || timeMonitor >= 20 ) {
      clearInterval(counter)
      clearInterval(showTime)
      console.log(timeMonitor, "hello here is me ");
      disable.disabled = false
-    
      diable = 1
      timeMonitor = 1
       disable.innerHTML ="Recharge Card"
